@@ -1,0 +1,17 @@
+import os
+import yt_dlp
+
+def download_video(url):
+    # 设置下载选项
+    ydl_opts = {
+        'format': 'best',  # 下载最佳质量的视频
+        'outtmpl': '%(title)s.%(ext)s',  # 输出文件名
+    }
+
+    # 使用 yt-dlp 开始下载
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([url])
+
+# 示例：替换为实际的央视视频网址
+video_url = 'https://tv.cctv.com/'  # 替换为实际的网址
+download_video(video_url)
